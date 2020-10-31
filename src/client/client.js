@@ -3,7 +3,8 @@
   var DRIP_GROW_RATE = 0.1;
   var DROP_SPEED = 0.5;
   var ACCELERATION = 0.5;
-  var START_CHANCE = 0.001;
+  var START_CHANCE = 0.0001;
+
   // Remove the script tags
   Array.prototype.slice
     .call(doc.getElementsByTagName("script"))
@@ -117,8 +118,11 @@
     draw(ctx, 0, 0, width, height);
   }
 
+  doc.body.style.height = doc.documentElement.style.height = "100%";
+  doc.body.style.overflow = doc.documentElement.style.overflow = "hidden";
+
   const canvas = doc.createElement("canvas");
-  canvas.height = 1024;
+  canvas.height = 512;
   canvas.width = 650;
   canvas.style.position = "absolute";
   canvas.style.zIndex = "-1";
