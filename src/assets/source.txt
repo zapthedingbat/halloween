@@ -1,0 +1,3 @@
+This is the tale of a haunted web application. It is said that blood dripped
+from its font face and if you pressed Ctrl + U to view the source... there was
+nothing there.

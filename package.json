@@ -1,0 +1,20 @@
+{
+  "name": "haunted-app",
+  "version": "1.0.0",
+  "description": "A haunted web application",
+  "private": true,
+  "scripts": {
+    "start": "node src/bin/www",
+    "build": "node scripts/build"
+  },
+  "keywords": [],
+  "author": "Sam Greenhalgh",
+  "license": "ISC",
+  "devDependencies": {
+    "escodegen": "^2.0.0",
+    "esmangle": "^1.0.1",
+    "esprima": "^4.0.1",
+    "esshorten": "^1.1.1",
+    "estraverse": "^5.2.0"
+  }
+}

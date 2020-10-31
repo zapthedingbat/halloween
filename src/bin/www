@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+const http = require("http");
+const app = require("../app");
+
+function handleServerError(error) {
+  switch (error.code) {
+    case "EACCES":
+      console.log("Requires elevated privileges");
+      process.exit(1);
+    case "EADDRINUSE":
+      console.log("Address already in use");
+      process.exit(1);
+    default:
+      throw error;
+  }
+}
+
+function startServer(handler) {
+  const server = http.createServer(handler);
+  server.listen(3000, "0.0.0.0");
+  server.on("error", handleServerError);
+  return new Promise((resolve) => {
+    server.on("listening", () => resolve());
+  });
+}
+
+(async () => {
+  await startServer(app);
+})();
