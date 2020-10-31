@@ -22,7 +22,7 @@ function html(request, response) {
 
 function load(request, response) {
   console.log("Script");
-  fs.readFile(path.resolve(__dirname, "../build/load.weird.js"), function (
+  fs.readFile(path.resolve(__dirname, "../dist/load.weird.js"), function (
     err,
     data
   ) {
@@ -54,7 +54,7 @@ function source(request, response) {
 
 function scriptImage(request, response) {
   console.log("Script Image");
-  fs.readFile(path.resolve(__dirname, "../build/client.weird.jpg"), function (
+  fs.readFile(path.resolve(__dirname, "../dist/client.weird.jpg"), function (
     err,
     data
   ) {
