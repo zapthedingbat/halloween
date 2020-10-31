@@ -88,7 +88,8 @@ function app(request, response) {
 
   const acceptHeader = request.headers["accept"];
   const acceptTypes = acceptHeader ? acceptHeader.split(",") : [];
-  if (acceptTypes.length === 1 && acceptTypes[0] === "*/*") {
+  const refererHeader = request.headers["referer"];
+  if (acceptTypes.length === 1 && acceptTypes[0] === "*/*" && refererHeader) {
     load(request, response);
     return;
   }
